@@ -7,8 +7,10 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+
   return (
     <>
+    <Greeting />
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
@@ -26,6 +28,8 @@ function App() {
           <p>
             My goal is to become a proficient full-stack developer with a strong foundation in both frontend and backend technologies.
           </p>
+          
+
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
@@ -123,8 +127,36 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+    <CurrentDate />
     </>
   )
+}
+
+function CurrentDate() {
+  return (
+    <p>
+     <strong>{new Date().toLocaleDateString()}</strong>
+    </p>
+  );
+}
+
+function Greeting(){
+  const hour = new Date().getHours();
+  let message;
+
+  if (hour < 12) {
+    message = 'Good morning, ☀️ Ready to build something great today?';
+  }else if (hour < 17) {
+    message = 'Good afternoon, 🌤️ What are you working on?';
+  }
+  else if (hour < 21) {
+    message = 'Good evening, 🌆 Time to unwind and reflect on your coding journey.';
+  }
+  else {
+    message = 'Good night, 🌙 Time to rest and recharge for another day of coding adventures.';
+  }
+
+  return <p><strong>{message}</strong></p>;
 }
 
 export default App
