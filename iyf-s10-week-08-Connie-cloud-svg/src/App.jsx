@@ -147,7 +147,7 @@ function Greeting(){
   if (hour < 12) {
     message = 'Good morning, ☀️ Ready to build something great today?';
   }else if (hour < 17) {
-    message = 'Good afternoon, 🌤️ What are you working on?';
+    message = 'Good afternoon, 🌤️ What are you working on today?';
   }
   else if (hour < 21) {
     message = 'Good evening, 🌆 Time to unwind and reflect on your coding journey.';
