@@ -16,7 +16,16 @@ function App() {
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Get started</h1>
+          <h1>Concepter Bosibori</h1>
+          <p>
+            Hello, I'm Connie a software developer from Nairobi, Kenya.
+          </p>
+          <p>
+            I enjoy creating web applications with modern technology.
+          </p>
+          <p>
+            My goal is to become a proficient full-stack developer with a strong foundation in both frontend and backend technologies.
+          </p>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
