@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import Header from './components/Header'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,6 +42,7 @@ function App() {
           Count is {count}
         </button>
       </section>
+
 
       <div className="ticks"></div>
 
@@ -158,5 +160,6 @@ function Greeting(){
 
   return <p><strong>{message}</strong></p>;
 }
+
 
 export default App
