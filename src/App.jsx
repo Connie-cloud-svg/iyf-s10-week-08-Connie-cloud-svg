@@ -3,15 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import Header from './components/Header'
 
 function App() {
   const [count, setCount] = useState(0)
 
-
   return (
     <>
-    <Greeting />
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
@@ -19,18 +16,7 @@ function App() {
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Concepter Bosibori</h1>
-          <p>
-            Hello, I'm Connie a software developer from Nairobi, Kenya.
-          </p>
-          <p>
-            I enjoy creating web applications with modern technology.
-          </p>
-          <p>
-            My goal is to become a proficient full-stack developer with a strong foundation in both frontend and backend technologies.
-          </p>
-          
-
+          <h1>Get started</h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
@@ -42,7 +28,6 @@ function App() {
           Count is {count}
         </button>
       </section>
-
 
       <div className="ticks"></div>
 
@@ -129,37 +114,8 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
-    <CurrentDate />
     </>
   )
 }
-
-function CurrentDate() {
-  return (
-    <p>
-     <strong>{new Date().toLocaleDateString()}</strong>
-    </p>
-  );
-}
-
-function Greeting(){
-  const hour = new Date().getHours();
-  let message;
-
-  if (hour < 12) {
-    message = 'Good morning, ☀️ Ready to build something great today?';
-  }else if (hour < 17) {
-    message = 'Good afternoon, 🌤️ What are you working on today?';
-  }
-  else if (hour < 21) {
-    message = 'Good evening, 🌆 Time to unwind and reflect on your coding journey.';
-  }
-  else {
-    message = 'Good night, 🌙 Time to rest and recharge for another day of coding adventures.';
-  }
-
-  return <p><strong>{message}</strong></p>;
-}
-
 
 export default App
