@@ -19,6 +19,11 @@ function App() {
 
   return (
     <>
+      {/* <div>
+        <Greeting userName="Connie" />
+        <Greeting userName="Mueni" />
+        <Greeting userName="Ngatia" />
+      </div> */}
       <section className="introduction">
         <h1>{name}</h1>
         <p>Hello👋 I'm Connie and this is my first React app!</p>
@@ -35,6 +40,8 @@ function App() {
         <Header />
         <main>
           <h2>Welcome to IYF Alumni Connect!</h2>
+          <PostCard />
+          <PostCard />
           <PostCard />
         </main>
 
