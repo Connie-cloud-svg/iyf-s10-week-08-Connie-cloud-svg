@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <section className="introduction">
         <h1>{name}</h1>
         <p>Hello👋 I'm Connie and this is my first React app!</p>
         <p>
@@ -30,7 +30,7 @@ function App() {
           My first project is a simple alumni networking app that I'm building
           from scratch. You shall be interacting with the app below. Bye now 😊!
         </p>
-      </div>
+      </section>
       <section className="App">
         <Header />
         <main>
