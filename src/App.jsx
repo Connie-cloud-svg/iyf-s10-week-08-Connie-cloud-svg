@@ -1,7 +1,8 @@
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
-import PostCard from "./Components/Postcard";
+import PostList from "./Components/PostList";
 import Sidebar from "./Components/Sidebar";
+import Button from "./Components/Button";
 
 function App() {
   const name = "Connie";
@@ -25,7 +26,12 @@ function App() {
       <p>This is my Week 8 project: .</p>
       <Header />
       <Sidebar />
-      <PostCard />
+      <PostList />
+
+      <Button text="Submit" variant="primary" />
+      <Button text="Cancel" variant="secondary" />
+      <Button text="Delete" variant="danger" />
+      <Button />  
       <div className="Date-Time-Message">
         <p>📅{today.toDateString()}</p>
         <p>{timeMessage}</p>
