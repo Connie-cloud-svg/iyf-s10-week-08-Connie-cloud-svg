@@ -3,8 +3,26 @@ import Header from "./Components/Header";
 import PostList from "./Components/PostList";
 import Sidebar from "./Components/Sidebar";
 import Button from "./Components/Button";
+import { useState } from "react";
 
 function App() {
+
+  const [posts, setPosts] = useState ([
+    {id: 1, title: 'My first react project.', likes: 0},
+    {id: 2, title: 'Cleaner JavaScript code.', likes: 0}
+  ]);
+
+  const handLike = (id) => {
+    setPosts(posts.map(post =>
+      post.id === id 
+      ? {...post, likes: post.likes + 1 }
+      : post
+    ));
+  };
+
+  const totalLikes = posts.reduce((sum, post) => sum + post.likes, 0);
+  
+  
   const name = "Connie";
   const today = new Date();
   const hour = today.getHours();
@@ -27,6 +45,11 @@ function App() {
       <Header />
       <Sidebar />
       <PostList />
+
+      <div>
+        <Stats totalPosts ={posts.length} totalLikes={totalLikes} />
+        <PostList posts={posts} onLike={handLike} />
+      </div>
 
       <Button text="Submit" variant="primary" />
       <Button text="Cancel" variant="secondary" />
