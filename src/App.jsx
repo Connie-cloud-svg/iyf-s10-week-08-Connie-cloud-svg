@@ -1,67 +1,89 @@
-import Footer from "./Components/Footer";
-import Header from "./Components/Header";
-import PostList from "./Components/PostList";
-import Sidebar from "./Components/Sidebar";
-import Button from "./Components/Button";
 import { useState } from "react";
 
+import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
+import Sidebar from "./components/Layout/Sidebar";
+import PostList from "./components/Post/PostList";
+import CreatePost from "./components/Post/CreatePost";
+import Counter from "./components/Exercises/Counter";
+import Greeting from "./components/Exercises/Greeting";
+import Toggle from "./components/Exercises/Toggle";
+import EventHandlerDemo from "./components/Exercises/EventHandlerDemo";
+
+import "./App.css";
+
 function App() {
+  const [posts, setPosts] = useState(initialPosts);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const [posts, setPosts] = useState ([
-    {id: 1, title: 'My first react project.', likes: 0},
-    {id: 2, title: 'Cleaner JavaScript code.', likes: 0}
-  ]);
-
-  const handLike = (id) => {
-    setPosts(posts.map(post =>
-      post.id === id 
-      ? {...post, likes: post.likes + 1 }
-      : post
-    ));
+  const handleCreatePost = (newPost) => {
+    setPosts((prev) => [newPost, ...prev]);
   };
 
+  const handleLike = (id) => {
+    setPosts((prev) =>
+    prev.map((post) => 
+    post.id === id ? { ...post, post.likes + 1} : post
+    )
+   );
+  };
+
+   const handleDelete = (id) => {
+    setPosts((prev) => prev.filter((post) => post.id !== id));
+  };
+ 
+  // Compute stats for display
   const totalLikes = posts.reduce((sum, post) => sum + post.likes, 0);
-  
-  
-  const name = "Connie";
-  const today = new Date();
-  const hour = today.getHours();
-
-  const timeMessage =
-    hour < 12
-      ? "Good morning! ☀️. Ready for a beautiful day?"
-      : hour < 17
-        ? "Good afternoon! 🌤️. Hope your day is going great!"
-        : "Good evening! 🌙. What have you achieved today?";
-
+ 
   return (
-    <section className="App">
-      <h1>Hello👋, I'm {name}.</h1>
-      <p>I am a developer learning React at IYF Weekend Academy Season 10.</p>
-      <p>
-        I enjoy building things and solving problems one component at a time.
-      </p>
-      <p>This is my Week 8 project: .</p>
-      <Header />
-      <Sidebar />
-      <PostList />
-
-      <div>
-        <Stats totalPosts ={posts.length} totalLikes={totalLikes} />
-        <PostList posts={posts} onLike={handLike} />
+    <div className="app">
+      {/* Header receives login state + handler */}
+      <Header
+        isLoggedIn={isLoggedIn}
+        onLogin={() => setIsLoggedIn((prev) => !prev)}
+      />
+ 
+      {/* Stats bar — Task 16.4 */}
+      <div className="stats-bar">
+        <span>📝 {posts.length} posts</span>
+        <span>❤️ {totalLikes} total likes</span>
       </div>
-
-      <Button text="Submit" variant="primary" />
-      <Button text="Cancel" variant="secondary" />
-      <Button text="Delete" variant="danger" />
-      <Button />  
-      <div className="Date-Time-Message">
-        <p>📅{today.toDateString()}</p>
-        <p>{timeMessage}</p>
+ 
+      <div className="app-body">
+        {/* Main content */}
+        <main className="main-content">
+          {/* Greeting — uses timeOfDay prop (Task 15.3) */}
+          <Greeting name={isLoggedIn ? "Member" : "Guest"} />
+ 
+          {/* Create Post form */}
+          <CreatePost onCreatePost={handleCreatePost} />
+ 
+          {/* Post list with search/filter */}
+          <PostList
+            posts={posts}
+            onLike={handleLike}
+            onDelete={handleDelete}
+          />
+ 
+          {/* ── Lesson Exercise Demos ──────────────────────────── */}
+          <section className="exercises-section">
+            <h2>📚 Lesson Exercises</h2>
+            <div className="exercises-grid">
+              <Counter />
+              <Toggle />
+              <EventHandlerDemo />
+            </div>
+          </section>
+        </main>
+ 
+        {/* Sidebar receives posts to compute popular posts */}
+        <Sidebar posts={posts} />
       </div>
+ 
       <Footer />
-    </section>
+    </div>
   );
-}
+
 
 export default App;
+}
