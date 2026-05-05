@@ -52,6 +52,7 @@
 
 body {
   margin: 0;
+  background-color: #0f172a;
 }
 
 #root {
@@ -110,15 +111,4 @@ code {
   background: var(--code-bg);
 }
 
-* {
-  box-sizing: border-box;
-}
 
-html {
-  font-size: 14px;
-}
-
-body {
-  margin: 0;
-  zoom: reset;
-}
