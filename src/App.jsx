@@ -50,7 +50,7 @@ function App() {
   const handleLike = (id) => {
     setPosts((prev) =>
     prev.map((post) => 
-    post.id === id ? { ...post, post.likes + 1} : post
+    post.id === id ? { ...post, likes: post.likes + 1} : post
     )
    );
   };
