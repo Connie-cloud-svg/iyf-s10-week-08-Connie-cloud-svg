@@ -1,16 +1,43 @@
 import { useState } from "react";
-
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
 import Sidebar from "./components/Layout/Sidebar";
 import PostList from "./components/Post/PostList";
 import CreatePost from "./components/Post/CreatePost";
-import Counter from "./components/Exercises/Counter";
-import Greeting from "./components/Exercises/Greeting";
-import Toggle from "./components/Exercises/Toggle";
-import EventHandlerDemo from "./components/Exercises/EventHandlerDemo";
-
+import Counter from "./components/exercises/Counter";
+import Toggle from "./components/exercises/Toggle";
+import Greeting from "./components/exercises/Greeting";
+import EventHandlerDemo from "./components/exercises/EventHandlerDemo";
 import "./App.css";
+ 
+// --- Initial seed data ---
+const initialPosts = [
+  {
+    id: 1,
+    title: "Getting Started with React",
+    excerpt: "Learn the basics of React — components, props, and state...",
+    author: "Philip Njau",
+    date: "April 20, 2026",
+    likes: 5,
+  },
+  {
+    id: 2,
+    title: "JavaScript Best Practices",
+    excerpt: "Write cleaner, more maintainable code with these tips...",
+    author: "Bob",
+    date: "April 24, 2026",
+    likes: 3,
+  },
+  {
+    id: 3,
+    title: "CSS Grid vs Flexbox",
+    excerpt: "When to use Grid and when Flexbox is the better choice...",
+    author: "Charlie",
+    date: "March 30, 2026",
+    likes: 8,
+  },
+];
+ 
 
 function App() {
   const [posts, setPosts] = useState(initialPosts);
