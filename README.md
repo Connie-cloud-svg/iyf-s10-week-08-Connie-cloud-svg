@@ -1,16 +1,65 @@
-# React + Vite
+# Week 8: React Fundamentals
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Author
+- **Name:** Connie
+- **GitHub:** [@Connie-cloud-svg](https://github.com/Connie-cloud-svg)
+- **Date:** May 5, 2026
 
-Currently, two official plugins are available:
+## Project Description
+AlumniHub is a React-based community platform where users can create posts, like and delete them, and browse content through a search and filter feature. Built as the Week 8 deliverable for IYF Weekend Academy Season 10, this project covers the core fundamentals of React including components, props, state, events, and controlled forms.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used
+- React 18
+- Vite
+- JavaScript (ES6+)
+- CSS3 (custom properties / CSS variables)
+- JSX
 
-## React Compiler
+## Features
+- Create new posts with a title, author name, and content
+- Like posts — like count updates in real time
+- Delete posts from the list
+- Search and filter posts by title, content, or author
+- Sidebar showing popular posts ranked by likes and category tags
+- Login/logout toggle with conditional greeting by time of day
+- Dark theme with pink accents
+- Lesson exercise demos — Counter, Toggle, and Event Handler patterns built in
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to Run
+1. Clone this repository
+   ```bash
+   git clone https://github.com/Connie-cloud-svg/iyf-s10-week-08-Connie-cloud-svg.git
+   ```
+2. Navigate into the project folder
+   ```bash
+   cd iyf-s10-week-08-Connie-cloud-svg
+   ```
+3. Install dependencies
+   ```bash
+   npm install
+   ```
+4. Start the development server
+   ```bash
+   npm run dev
+   ```
+5. Open your browser and go to `http://localhost:5173`
 
-## Expanding the ESLint configuration
+## Lessons Learned
+- How JSX works — writing HTML-like syntax inside JavaScript and using `{}` to embed expressions
+- The difference between props (data passed in from a parent) and state (data managed inside a component)
+- How `useState` works and why you never mutate state directly — always create a new array or object
+- Lifting state up — keeping shared data in the parent component and passing it down via props and callback functions
+- How controlled forms work — every input is tied to state via `value` and `onChange`
+- The importance of the `key` prop when rendering lists with `.map()`
+- How conditional rendering with `&&` and ternary operators keeps JSX clean
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Challenges Faced
+- **Syntax error in the like handler** — wrote `{ ...post, post.likes + 1 }` instead of `{ ...post, likes: post.likes + 1 }`. Learned that spread syntax still requires proper key-value pairs.
+- **Blank white screen on load** — caused by a corrupted `App.jsx` from a copy-paste issue. Fixed by replacing the whole file with a clean version and checking the console for the exact error.
+- **Buttons invisible on dark theme** — the secondary button style used hardcoded light grey which disappeared against the dark background. Fixed by switching to CSS variables so all colours adapt to the theme automatically.
+
+## Screenshots (optional)
+![CommunityHub Screenshot](path/to/screenshot.png)
+
+## Live Demo (if deployed)
+[View Live Demo](https://your-deployed-url.com)
