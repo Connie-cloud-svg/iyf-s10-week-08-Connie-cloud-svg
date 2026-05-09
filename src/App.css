@@ -1,17 +1,17 @@
 /* ── CSS Variables ────────────────────────────────── */
 :root {
-  --primary: #4f46e5;
-  --primary-dark: #3730a3;
-  --secondary: #6b7280;
-  --danger: #dc2626;
-  --danger-dark: #b91c1c;
-  --bg: #f9fafb;
-  --surface: #ffffff;
-  --border: #e5e7eb;
-  --text: #111827;
-  --text-muted: #6b7280;
+  --primary: #ec4899;
+  --primary-dark: #be185d;
+  --secondary: #f9a8d4;
+  --danger: #ef4444;
+  --danger-dark: #dc2626;
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --border: #334155;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
   --radius: 8px;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* ── Reset & Base ─────────────────────────────────── */
@@ -58,8 +58,8 @@ a:hover { text-decoration: underline; }
 .btn { cursor: pointer; border: none; border-radius: var(--radius); font-size: 0.9rem; font-weight: 500; transition: background 0.15s; }
 .btn-primary   { background: var(--primary); color: white; padding: 8px 16px; }
 .btn-primary:hover { background: var(--primary-dark); }
-.btn-secondary { background: #e5e7eb; color: var(--text); padding: 8px 16px; }
-.btn-secondary:hover { background: #d1d5db; }
+.btn-secondary { background: var(--border); color: var(--text); padding: 8px 16px; }
+.btn-secondary:hover { background: var(--text-muted); }
 .btn-danger    { background: var(--danger); color: white; padding: 8px 16px; }
 .btn-danger:hover { background: var(--danger-dark); }
 .btn-small  { font-size: 0.82rem; padding: 5px 12px; }
