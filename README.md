@@ -59,7 +59,5 @@ AlumniHub is a React-based community platform where users can create posts, like
 - **Buttons invisible on dark theme** — the secondary button style used hardcoded light grey which disappeared against the dark background. Fixed by switching to CSS variables so all colours adapt to the theme automatically.
 
 ## Screenshots (optional)
-![CommunityHub Screenshot](path/to/screenshot.png)
+![AlumniHub Screenshot](images/alumnihub.png)
 
-## Live Demo (if deployed)
-[View Live Demo](https://your-deployed-url.com)
