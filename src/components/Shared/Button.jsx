@@ -13,6 +13,7 @@ function Button({
       className={`btn btn-${variant} btn-${size}`}
       disabled={disabled}
       onClick={onClick}
+      disabled={disabled || loading}
     >
       {text}
     </button>
