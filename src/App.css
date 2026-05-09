@@ -1,17 +1,17 @@
 /* ── CSS Variables ────────────────────────────────── */
 :root {
-  --primary: #ec4899;
-  --primary-dark: #be185d;
-  --secondary: #f9a8d4;
-  --danger: #ef4444;
-  --danger-dark: #dc2626;
-  --bg: #0f172a;
-  --surface: #1e293b;
-  --border: #334155;
-  --text: #f1f5f9;
-  --text-muted: #94a3b8;
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --secondary: #6b7280;
+  --danger: #dc2626;
+  --danger-dark: #b91c1c;
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --text: #111827;
+  --text-muted: #6b7280;
   --radius: 8px;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* ── Reset & Base ─────────────────────────────────── */
@@ -58,8 +58,8 @@ a:hover { text-decoration: underline; }
 .btn { cursor: pointer; border: none; border-radius: var(--radius); font-size: 0.9rem; font-weight: 500; transition: background 0.15s; }
 .btn-primary   { background: var(--primary); color: white; padding: 8px 16px; }
 .btn-primary:hover { background: var(--primary-dark); }
-.btn-secondary { background: var(--border); color: var(--text); padding: 8px 16px; }
-.btn-secondary:hover { background: var(--text-muted); }
+.btn-secondary { background: #e5e7eb; color: var(--text); padding: 8px 16px; }
+.btn-secondary:hover { background: #d1d5db; }
 .btn-danger    { background: var(--danger); color: white; padding: 8px 16px; }
 .btn-danger:hover { background: var(--danger-dark); }
 .btn-small  { font-size: 0.82rem; padding: 5px 12px; }
@@ -79,10 +79,19 @@ a:hover { text-decoration: underline; }
 .card-header { padding: 12px 16px; border-bottom: 1px solid var(--border); }
 .card-title { font-size: 1rem; }
 .card-body { padding: 16px; }
-.card-elevated { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+/* Day 2: Card variants */
+.card-default { border: 1px solid var(--border); }
+.card-primary { border: 2px solid var(--primary); box-shadow: 0 0 0 3px rgba(236,72,153,0.15); }
+.card-primary .card-header { background: var(--primary); }
+.card-primary .card-title { color: white; }
+.card-secondary { border: 2px solid var(--secondary); }
+.card-secondary .card-header { background: var(--border); }
+.card-outlined { background: transparent; border: 2px dashed var(--border); }
+.card-elevated { box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
 
 /* ── Post List ────────────────────────────────────── */
 .post-list-section { display: flex; flex-direction: column; gap: 12px; }
+.post-list-search { }
 .post-list-count { font-size: 0.85rem; color: var(--text-muted); }
 .post-list { display: flex; flex-direction: column; gap: 14px; }
 .empty-state { text-align: center; padding: 30px; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; gap: 10px; }
@@ -95,15 +104,16 @@ a:hover { text-decoration: underline; }
 .post-card-actions { display: flex; gap: 8px; }
 
 /* ── Create Post ──────────────────────────────────── */
+.create-post { }
 .create-post-form-wrapper { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
 .create-post-form-wrapper h3 { margin-bottom: 14px; }
 .create-post-form { display: flex; flex-direction: column; gap: 10px; }
 .create-post-actions { display: flex; gap: 8px; }
 
-/* Greeting  */
+/* ── Greeting ─────────────────────────────────────── */
 .greeting-message { font-size: 1.1rem; }
 
-/* User Card */
+/* ── User Card ────────────────────────────────────── */
 .user-card { display: flex; gap: 14px; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
 .user-avatar { width: 48px; height: 48px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: bold; flex-shrink: 0; }
 .user-name { font-size: 1rem; margin-bottom: 2px; }
@@ -111,7 +121,7 @@ a:hover { text-decoration: underline; }
 .user-bio { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px; }
 .user-stats { display: flex; gap: 14px; font-size: 0.82rem; color: var(--text-muted); }
 
-/*Exercises */
+/* ── Exercises ────────────────────────────────────── */
 .exercises-section { border-top: 2px dashed var(--border); padding-top: 20px; }
 .exercises-section h2 { margin-bottom: 16px; }
 .exercises-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
@@ -125,5 +135,18 @@ a:hover { text-decoration: underline; }
 
 /* Event demo */
 .event-items { display: flex; gap: 6px; }
-.event-log { background: #f3f4f6; border-radius: var(--radius); padding: 10px; font-size: 0.8rem; }
+.event-log { background: var(--border); border-radius: var(--radius); padding: 10px; font-size: 0.8rem; }
 .event-log-entry { color: var(--text-muted); margin-top: 4px; }
+
+/* ── Day 3: UserList ──────────────────────────────── */
+.user-list { display: flex; flex-direction: column; gap: 12px; }
+.user-list-empty { text-align: center; padding: 24px; color: var(--text-muted); font-size: 0.9rem; }
+
+/* ── Day 4: Button loading spinner ───────────────── */
+.btn-spinner { display: inline-flex; align-items: center; gap: 6px; }
+
+/* ── Day 5: PageLayout ────────────────────────────── */
+.layout { display: flex; flex-direction: column; min-height: 100vh; }
+.layout-body { display: flex; gap: 24px; max-width: 1100px; margin: 24px auto; padding: 0 16px; width: 100%; flex: 1; }
+.layout-with-sidebar { display: flex; }
+.layout-with-sidebar .main-content { flex: 1; }
